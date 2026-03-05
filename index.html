@@ -1,39 +1,165 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pocket Drummer</title>
-  <meta name="description" content="Drum PDF packs met fills en grooves. Inclusief audio examples." />
+  <meta name="description" content="Drum PDF packs with fills and grooves. Sheet music + audio examples included." />
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; line-height: 1.5; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
-    header { margin-bottom: 32px; }
-    h1 { font-size: 40px; margin: 0 0 8px; }
-    p { margin: 0 0 16px; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
-    .muted { color: #6b7280; }
-    a.button { display: inline-block; padding: 10px 14px; border: 1px solid #111827; border-radius: 10px; text-decoration: none; color: #111827; }
-    footer { margin-top: 48px; font-size: 14px; color: #6b7280; }
+    :root{
+      --navy:#0b223a;
+      --navy2:#061829;
+      --orange:#f28c28;
+      --paper:#f6f6f6;
+      --ink:#0b1220;
+      --line:rgba(255,255,255,.14);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(242,140,40,.18), transparent 60%),
+        radial-gradient(700px 500px at 85% 20%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(180deg, var(--navy2), var(--navy));
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      padding: 28px 22px;
+      position: relative;
+      overflow:hidden;
+    }
+
+    /* subtle “music staff” vibe */
+    .hero:before{
+      content:"";
+      position:absolute; inset:-40px -20px auto -20px;
+      height:180px;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0 18px,
+          rgba(242,140,40,.25) 18px 19px,
+          transparent 19px 36px
+        );
+      opacity:.35;
+      transform: rotate(-2deg);
+      pointer-events:none;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size: 44px;
+      letter-spacing: .5px;
+      color: white;
+      text-transform: uppercase;
+      text-shadow: 0 3px 0 rgba(0,0,0,.35);
+    }
+
+    .sub{
+      margin:0;
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      max-width: 64ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size:36px; }
+    }
+
+    .card{
+      background: rgba(246,246,246,.96);
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.08);
+      padding: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+    }
+
+    .tag{
+      display:inline-block;
+      background: rgba(242,140,40,.14);
+      border: 1px solid rgba(242,140,40,.35);
+      color: #7a3d00;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing:.2px;
+      margin-bottom:10px;
+    }
+
+    h2{ margin: 0 0 10px; font-size: 20px; }
+    p{ margin: 0 0 12px; line-height:1.55; }
+
+    .button{
+      display:inline-block;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--navy);
+      background: white;
+      color: var(--navy);
+      text-decoration:none;
+      font-weight: 800;
+    }
+    .button:hover{ transform: translateY(-1px); }
+
+    .small{
+      color: rgba(0,0,0,.62);
+      font-size: 14px;
+    }
+
+    footer{
+      margin-top: 26px;
+      color: rgba(255,255,255,.70);
+      font-size: 14px;
+      padding: 10px 2px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-<h1>POCKET DRUMMER TEST 123</h1>
-      <p class="muted">Drum PDF packs met fills en grooves. Inclusief audio examples.</p>
-    </header>
+    <section class="hero">
+      <h1>Pocket Drummer</h1>
+      <p class="sub">Drum PDF packs with fills and grooves. Sheet music + audio examples included.</p>
 
-    <div class="card">
-      <h2 style="margin-top:0">Eerste release</h2>
-      <p><strong>50 Beginner Drum Fills</strong> (PDF + audio)</p>
-      <p class="muted">Meer info en downloadlink volgen.</p>
-      <p><a class="button" href="#" aria-disabled="true">Binnenkort beschikbaar</a></p>
-    </div>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">First release</span>
+          <h2>50 Beginner Drum Fills (PDF + audio)</h2>
+          <p class="small">Clear notation, easy-to-learn patterns, and practice audio.</p>
+          <a class="button" href="#" aria-disabled="true">Available soon</a>
+        </div>
 
-    <footer>
-      <p>© Pocket Drummer</p>
-    </footer>
+        <div class="card">
+          <h2>What’s inside</h2>
+          <p class="small">• 50 progressive fills for beginners<br>
+            • All fills fully notated (sheet music)<br>
+            • High-quality audio examples (MP3)</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>© Pocket Drummer</footer>
   </div>
 </body>
 </html>
