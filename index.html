@@ -1,3 +1,4 @@
+<!-- index.html (complete new version with the button linked) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,10 +31,9 @@
 
     .wrap{ max-width:980px; margin:0 auto; padding:56px 20px 28px; }
 
-    /* THIS is the big rounded rectangle */
     .hero{
-      background: var(--navy);                /* changed to navy */
-      border:1px solid rgba(255,255,255,.14); /* subtle light border */
+      background: var(--navy);
+      border:1px solid rgba(255,255,255,.14);
       border-radius:16px;
       padding:28px 22px;
       position:relative;
@@ -41,7 +41,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* subtle staff lines in orange */
     .hero:before{
       content:"";
       position:absolute; inset:-40px -20px auto -20px;
@@ -61,13 +60,13 @@
       margin:0 0 8px;
       font-size:44px;
       letter-spacing:.6px;
-      color:#fff;                 /* white on navy */
+      color:#fff;
       text-transform:uppercase;
     }
 
     .sub{
       margin:0;
-      color:rgba(255,255,255,.85); /* readable on navy */
+      color:rgba(255,255,255,.85);
       font-size:16px;
       max-width:68ch;
     }
@@ -117,8 +116,9 @@
       color:var(--navy);
       text-decoration:none;
       font-weight:900;
-      cursor:default;
+      cursor:pointer;
     }
+    .button:hover{ transform: translateY(-1px); }
 
     .support{
       margin-top:18px;
@@ -180,7 +180,12 @@
           <span class="tag">First release</span>
           <h2>50 Beginner Drum Fills (PDF + audio)</h2>
           <p class="small">Clear notation, easy-to-learn patterns, and practice audio.</p>
-          <a class="button" href="#" aria-disabled="true">Available soon</a>
+
+          <a class="button"
+             href="https://pocket-drummer.lemonsqueezy.com/checkout/buy/a1b36f9b-4e76-457d-8fa7-8b6b0aae42eb"
+             target="_blank" rel="noopener noreferrer">
+            Buy now
+          </a>
         </div>
 
         <div class="card">
