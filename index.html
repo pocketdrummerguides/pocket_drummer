@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pocket Drummer</title>
   <meta name="description" content="Drum PDF packs with fills and grooves. Sheet music + audio examples included." />
+
   <style>
     :root{
       --navy:#0b223a;
@@ -12,7 +14,9 @@
       --orange:#f28c28;
       --paper:#f6f6f6;
       --ink:#0b1220;
-      --line:rgba(255,255,255,.14);
+      --muted: rgba(255,255,255,.78);
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 14px 40px rgba(0,0,0,.22);
     }
 
     *{ box-sizing:border-box; }
@@ -27,22 +31,22 @@
       min-height:100vh;
     }
 
+    a{ color: inherit; }
     .wrap{
       max-width: 980px;
       margin: 0 auto;
-      padding: 56px 20px;
+      padding: 56px 20px 28px;
     }
 
     .hero{
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid var(--line);
       border-radius: 16px;
       padding: 28px 22px;
       position: relative;
       overflow:hidden;
     }
 
-    /* subtle “music staff” vibe */
     .hero:before{
       content:"";
       position:absolute; inset:-40px -20px auto -20px;
@@ -70,9 +74,9 @@
 
     .sub{
       margin:0;
-      color: rgba(255,255,255,.82);
+      color: var(--muted);
       font-size: 16px;
-      max-width: 64ch;
+      max-width: 68ch;
     }
 
     .grid{
@@ -91,7 +95,7 @@
       border-radius: 16px;
       border: 1px solid rgba(0,0,0,.08);
       padding: 18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+      box-shadow: var(--shadow);
     }
 
     .tag{
@@ -119,19 +123,59 @@
       color: var(--navy);
       text-decoration:none;
       font-weight: 800;
+      cursor: default;
     }
-    .button:hover{ transform: translateY(-1px); }
 
     .small{
       color: rgba(0,0,0,.62);
       font-size: 14px;
     }
 
+    .support{
+      margin-top: 18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: rgba(255,255,255,.90);
+    }
+    .support h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      color: white;
+      letter-spacing:.2px;
+    }
+    .support a{
+      color: white;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .policy-lines{
+      margin: 10px 0 0;
+      color: rgba(255,255,255,.80);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
     footer{
-      margin-top: 26px;
+      max-width: 980px;
+      margin: 18px auto 0;
+      padding: 0 20px 28px;
       color: rgba(255,255,255,.70);
       font-size: 14px;
-      padding: 10px 2px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .legal a{
+      color: rgba(255,255,255,.85);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-right: 14px;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -152,14 +196,37 @@
 
         <div class="card">
           <h2>What’s inside</h2>
-          <p class="small">• 50 progressive fills for beginners<br>
+          <p class="small">
+            • 50 progressive fills for beginners<br>
             • All fills fully notated (sheet music)<br>
-            • High-quality audio examples (MP3)</p>
+            • High-quality audio examples (MP3)
+          </p>
+        </div>
+      </div>
+
+      <div class="support">
+        <h3>Support / Contact</h3>
+        <p style="margin:0">
+          Email: <a href="mailto:pocket.drummer.guides@gmail.com">pocket.drummer.guides@gmail.com</a>
+        </p>
+        <div class="policy-lines">
+          <p style="margin:10px 0 0;">
+            <strong>Delivery:</strong> After purchase you’ll receive an instant download link (PDF + MP3).
+          </p>
+          <p style="margin:8px 0 0;">
+            <strong>Refunds:</strong> Due to the nature of digital downloads, refunds are not guaranteed. Contact support if you have issues.
+          </p>
         </div>
       </div>
     </section>
-
-    <footer>© Pocket Drummer</footer>
   </div>
+
+  <footer>
+    <div>© Pocket Drummer</div>
+    <div class="legal">
+      <a href="./terms.html">Terms</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+  </footer>
 </body>
 </html>
